@@ -1,0 +1,25 @@
+follow_controller:
+  robot:
+    footprint:
+      p1_x: 0.33
+      p1_y: 0.26
+      p2_x: -0.33
+      p2_y: 0.26
+      p3_x: -0.33
+      p3_y: -0.26
+      p4_x: 0.33
+      p4_y: -0.26
+    base_to_scan_dist: 0.282
+    max_v: 0.4
+    min_v: -0.4
+    max_w: 0.3
+    min_w: -0.3
+    max_acc_x: 0.2
+    max_dec_x: 0.2
+    max_acc_theta: 0.2
+    max_dec_theta: 0.2
+    command_topic: "/tt15_cmd_vel"
+    Kp_l: 0.4
+    Kp_a: 0.5
+    dist_threshold: 0.8
+    init_theta: 0

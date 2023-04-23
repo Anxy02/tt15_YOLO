@@ -1,0 +1,37 @@
+<launch>
+  <arg name="pkg" value="olelidar"/>
+
+  <!-- driver -->
+  <arg name="driver" default="true"/>
+  <arg name="device_ip" default="192.168.192.100"/>
+  <arg name="device_port" default="2368"/>
+  <arg name="local_ip" default="192.168.192.66"/>
+  <arg name="multiaddr" default=""/>
+  
+  <!-- decoder -->
+  <arg name="frame_id" default="olelidar"/>
+  <arg name="r_max" default="50"/>
+  <arg name="ang_start" default="-180"/>
+  <arg name="ang_end" default="180"/>
+  <arg name="decoder" default="true"/>
+  <arg name="inverted" default="false"/>
+  <arg name="debug" default="false"/>
+  <env if="$(arg debug)" name="ROSCONSOLE_CONFIG_FILE" value="$(find olelidar)/launch/debug.conf"/>
+
+  <node pkg="$(arg pkg)" type="$(arg pkg)_decoder" name="$(arg pkg)_decoder" output="screen">
+    <param name="frame_id" type="string" value="$(arg frame_id)"/>
+    <param name="r_max" type="int" value="$(arg r_max)"/>
+    <param name="ang_start" type="int" value="$(arg ang_start)"/>
+    <param name="ang_end" type="int" value="$(arg ang_end)"/>
+    <param name="inverted" type="bool" value="$(arg inverted)"/>
+    <remap from="~packet" to="packet"/>
+    <remap from="~scan" to="/olelidar/scan"/>
+
+    <param name="device_ip" type="string" value="$(arg device_ip)"/>
+    <param name="device_port" type="int" value="$(arg device_port)"/>
+    <param name="local_ip" type="string" value="$(arg local_ip)"/>
+    <param name="multiaddr" type="string" value="$(arg multiaddr)"/>
+
+  </node>
+
+</launch>

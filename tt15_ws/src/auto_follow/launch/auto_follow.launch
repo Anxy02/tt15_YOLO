@@ -1,0 +1,25 @@
+<launch>
+  <arg name="laser_scan" default="/olelidar/scan" />    
+  <arg name="ANTRO_a0" value="0.025" />
+  <arg name="ANTRO_a1" value="0.5" />
+  <arg name="init_x" value="0.5" />
+  <arg name="init_y" value="0.0" />
+  <arg name="duration_t" value="3" />
+
+  <node pkg="auto_follow" type="people_detector_node" name="people_detector_node" output="screen">
+      <param name="laser_scan" value="$(arg laser_scan)" type="string"/>
+      <param name="ANTRO_a0" value="$(arg ANTRO_a0)" type="double"/>
+      <param name="ANTRO_a1" value="$(arg ANTRO_a1)" type="double"/>
+      <param name="init_x" value="$(arg init_x)" type="double"/>
+      <param name="init_y" value="$(arg init_y)" type="double"/>
+      <param name="duration_t" value="$(arg duration_t)" type="double" />
+  </node>
+
+  <node pkg="auto_follow" type="follow_controller" name="follow_controller" output="screen">
+    <rosparam file="$(find auto_follow)/param/auto_follow_controller_params.yaml" command="load" />   
+  </node>
+
+   <!-- <node pkg="rviz" type="rviz" name = "rviz" args="-d $(find auto_follow)/rviz/auto_follow.rviz"/> -->
+
+
+</launch>

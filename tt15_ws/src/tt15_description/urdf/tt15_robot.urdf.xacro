@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot name="tt15" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find tt15_description)/urdf/tt15_description.urdf.xacro" />
+
+    <!-- MRobot机器人平台 -->
+    <xacro:tt15/>
+
+</robot>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="tt15">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.016151 0.00043969 0.087521"
+        rpy="0 0 0" />
+      <mass
+        value="5.9547" />
+      <inertia
+        ixx="0.076856"
+        ixy="9.3181E-07"
+        ixz="-0.00034357"
+        iyy="0.067606"
+        iyz="-4.2068E-05"
+        izz="0.13791" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tt15_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5098 0.59608 0.45098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tt15_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="2.4703E-06 -0.0012899 9.0679E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.70502" />
+      <inertia
+        ixx="0.0016931"
+        ixy="-3.652E-18"
+        ixz="-1.6813E-11"
+        iyy="0.0031705"
+        iyz="3.7816E-08"
+        izz="0.0016933" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tt15_description/meshes/left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tt15_description/meshes/left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.22071 -0.0020002"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="right_wheel_Link">
+    <inertial>
+      <origin
+        xyz="-2.4703E-06 0.0012899 9.0679E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.70502" />
+      <inertia
+        ixx="0.0016931"
+        ixy="-4.0455E-18"
+        ixz="1.6813E-11"
+        iyy="0.0031705"
+        iyz="-3.7816E-08"
+        izz="0.0016933" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tt15_description/meshes/right_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tt15_description/meshes/right_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.22071 -0.0020002"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="front_caster_wheel_Link">
+    <inertial>
+      <origin
+        xyz="-0.00970797491729186 -3.45465526116473E-08 -0.00573920789631178"
+        rpy="0 0 0" />
+      <mass
+        value="0.0437519362489148" />
+      <inertia
+        ixx="6.78003851903794E-06"
+        ixy="-5.09152153060292E-12"
+        ixz="4.11163313565434E-15"
+        iyy="8.16306165129579E-06"
+        iyz="3.37435080553074E-12"
+        izz="1.06592496755636E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tt15_description/meshes/front_caster_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tt15_description/meshes/front_caster_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_caster_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.24 0.06 -0.0483"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_caster_wheel_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="back_caster_wheel_Link">
+    <inertial>
+      <origin
+        xyz="0.24835 0.060345 0.11522"
+        rpy="0 0 0" />
+      <mass
+        value="7.5801" />
+      <inertia
+        ixx="0.21035"
+        ixy="-0.00093455"
+        ixz="0.0014762"
+        iyy="0.22682"
+        iyz="9.6823E-05"
+        izz="0.36933" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tt15_description/meshes/back_caster_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tt15_description/meshes/back_caster_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_caster_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.24 -0.06 -0.0483"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="back_caster_wheel_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="Laser_Link">
+    <inertial>
+      <origin
+        xyz="1.7834E-05 -0.0050129 -0.019856"
+        rpy="0 0 0" />
+      <mass
+        value="0.23893" />
+      <inertia
+        ixx="0.00016679"
+        ixy="-3.8597E-08"
+        ixz="4.7531E-09"
+        iyy="0.00015924"
+        iyz="-8.3957E-07"
+        izz="0.00011562" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tt15_description/meshes/Laser_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tt15_description/meshes/Laser_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Laser_joint"
+    type="fixed">
+    <origin
+      xyz="0.2654 0 0.090068"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="Laser_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

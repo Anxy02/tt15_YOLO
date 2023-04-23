@@ -1,0 +1,23 @@
+<!--
+  Driver for the logitech rumblepad2 joystick.
+
+  Use the D pad while pressing and holding the left trigger button (5) to control.
+-->
+<launch>
+  <node pkg="tt15_driver" type="logitech_teleop_joy" name="logitech_teleop_joystick">
+    <remap from="/joy/cmd_vel" to="/tt15_cmd_vel" />
+    <!-- <remap from="/joy/cmd_vel" to="/input/joystick" /> -->
+    <param name="scale_linear" value="1"/>
+    <param name="scale_angular" value="0.5"/>
+    <param name="axis_linear" value = "1"/>
+    <param name="axis_angular" value = "2"/>
+    <param name="axis_deadman" value = "6"/>
+    <param name="button_X" value = "0"/>
+    <param name="button_A" value = "1"/>
+    <param name="button_B" value = "2"/>
+    <param name="button_Y" value = "3"/>
+  </node>
+
+  <node pkg="joy" type="joy_node" name="joystick"/>
+
+</launch>

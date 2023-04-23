@@ -1,0 +1,26 @@
+<launch>
+    <!-- 手柄 -->
+    <include file="$(find tt15_driver)/launch/logitech.launch"/>
+
+    <!-- 启动tt15 -->
+
+    <node pkg="tt15_driver" type="tt15_driver" name="tt15_driver"/>
+
+    <!-- 加载机器人模型 -->
+    <arg name="urdf_file" default="$(find xacro)/xacro '$(find tt15_description)/urdf/tt15_robot.urdf.xacro'" />
+    <param name="robot_description" command="$(arg urdf_file)" />
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="5.0" />
+    </node>
+
+    <!-- 静态tf -->
+    <!-- <node name="laser2laser" pkg="tf" type="static_transform_publisher" args="0 0 0 -1.57 0 0 laser_link scan 50" /> -->
+    <node name="laser2laser" pkg="tf" type="static_transform_publisher" args="0 0 0 1.57 0 0 Laser_Link olelidar 50"/>
+
+    <!-- 运行激光雷达驱动 -->
+    <include file="$(find olelidar)/launch/scan.launch" />
+
+</launch>

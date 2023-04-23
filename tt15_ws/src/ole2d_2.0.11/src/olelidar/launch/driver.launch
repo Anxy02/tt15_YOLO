@@ -1,0 +1,15 @@
+<launch>
+  <arg name="pkg" value="olelidar"/>
+  <arg name="device_ip" default="192.168.1.100"/>
+  <arg name="device_port" default="2368"/>
+  <arg name="local_ip" default="192.168.1.10"/>
+  <arg name="multiaddr" default="239.255.0.100"/>
+  <node pkg="olelidar" type="$(arg pkg)_driver" name="$(arg pkg)_driver" output="screen">
+    <param name="device_ip" type="string" value="$(arg device_ip)"/>
+    <param name="device_port" type="int" value="$(arg device_port)"/>
+    <param name="local_ip" type="string" value="$(arg local_ip)"/>
+    <param name="multiaddr" type="string" value="$(arg multiaddr)"/>
+    <remap from="~packet" to="packet"/>
+  </node>
+
+</launch>

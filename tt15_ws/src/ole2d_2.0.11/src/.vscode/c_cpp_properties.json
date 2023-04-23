@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/parker/tt15_ws/devel/include/**",
+        "/home/parker/mp10_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/parker/mp10_ws/src/auto_follow/include/**",
+        "/home/parker/cp_from_NUC/src/mp10_bringup/include/**",
+        "/home/parker/cp_from_NUC/src/mp10_description/include/**",
+        "/home/parker/cp_from_NUC/src/mp10_dispatcher/include/**",
+        "/home/parker/cp_from_NUC/src/mp10_docking/include/**",
+        "/home/parker/cp_from_NUC/src/mp10_driver/include/**",
+        "/home/parker/mp10_ws/src/mp10_gazebo/include/**",
+        "/home/parker/cp_from_NUC/src/pepperl_fuchs_r2000/include/**",
+        "/home/parker/tt15_ws/src/tt15_driver/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}
