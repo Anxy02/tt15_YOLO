@@ -1,2 +1,4 @@
+tt15_ws/build/
+tt15_ws/devel/
+.vscode
 .DS_Store
-.vscode/settings.json
